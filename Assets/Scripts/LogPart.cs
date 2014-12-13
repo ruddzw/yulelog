@@ -11,7 +11,17 @@ public class LogPart : MonoBehaviour {
     public float normalSpeedMax;
     public float normalEmissionRate;
 
+    public float pokedLifetimeMin;
+    public float pokedLifetimeMax;
+    public float pokedSpeedMin;
+    public float pokedSpeedMax;
+    public float pokedEmissionRate;
+
     private ParticleSystem fireSystem;
+
+    private float pokeTimer;
+    private bool poked;
+    private const float kPokeTimerMax = 0.25f;
 
     public Vector3 FirePosition() {
         return new Vector3(transform.position.x, -3.5f, 1f);
@@ -24,8 +34,20 @@ public class LogPart : MonoBehaviour {
     }
 
     void Update() {
-        fireSystem.startLifetime = Random.Range(normalLifetimeMin, normalLifetimeMax);
-        fireSystem.startSpeed = Random.Range(normalSpeedMin, normalSpeedMax);
+        if (poked) {
+            pokeTimer += Time.deltaTime;
+            if (pokeTimer >= kPokeTimerMax) {
+                poked = false;
+            }
+
+            fireSystem.startLifetime = Random.Range(pokedLifetimeMin, pokedLifetimeMax);
+            fireSystem.startSpeed = Random.Range(pokedSpeedMin, pokedSpeedMax);
+            fireSystem.emissionRate = pokedEmissionRate;
+        } else {
+            fireSystem.startLifetime = Random.Range(normalLifetimeMin, normalLifetimeMax);
+            fireSystem.startSpeed = Random.Range(normalSpeedMin, normalSpeedMax);
+            fireSystem.emissionRate = normalEmissionRate;
+        }
     }
 
     private void InitializeFireSystem() {
@@ -34,5 +56,22 @@ public class LogPart : MonoBehaviour {
         fireSystem.emissionRate = normalEmissionRate;
 
         fireSystem.Play();
+    }
+
+    public void Poke() {
+        pokeTimer = 0f;
+        poked = true;
+
+        if (left != null) {
+            left.NearbyPoke();
+        }
+        if (right != null) {
+            right.NearbyPoke();
+        }
+    }
+
+    public void NearbyPoke() {
+        pokeTimer = kPokeTimerMax / 2f;
+        poked = true;
     }
 }
