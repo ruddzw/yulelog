@@ -20,7 +20,7 @@ public class AudioPlayer : YuleMonoBehaviour {
         fireplace2.Stop();
         fireplace1.volume = 0f;
         fireplace1.Play();
-        LeanTween.value(gameObject, (float vol) => {fireplace1.volume = vol;}, 0f, 1f, 1f);
+        LeanTween.value(gameObject, (float vol) => {fireplace1.volume = vol;}, 0f, 1f, 4f);
 
         while (true) {
             yield return new WaitForSeconds(kFireplacePlayTime);

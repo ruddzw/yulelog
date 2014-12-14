@@ -10,9 +10,15 @@ public class Initialization : YuleMonoBehaviour {
     }
 
     private IEnumerator LightLog() {
+        yield return new WaitForSeconds(1f);
+
+        GetMatch().GetComponent<Animator>().SetTrigger("Start");
+
+        yield return new WaitForSeconds(0.5f);
+
         GetComponent<AudioPlayer>().PlayMatch();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
 
         GetComponent<AudioPlayer>().PlayFireplaces();
 

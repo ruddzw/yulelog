@@ -21,6 +21,8 @@ public class LogPart : YuleMonoBehaviour {
     private ParticleSystem fireSystem;
 
     private bool lit;
+    private float lightTimer;
+    private const float kLightTimerMax = 2f;
     private float pokeTimer;
     private bool poked;
     private const float kPokeTimerMax = 0.25f;
@@ -34,7 +36,19 @@ public class LogPart : YuleMonoBehaviour {
             return;
         }
 
-        if (poked) {
+        if (lit && lightTimer <= kLightTimerMax) {
+            lightTimer += Time.deltaTime;
+
+            float amountLit = lightTimer / kLightTimerMax;
+            float lifetimeMin = Mathf.Lerp(0f, normalLifetimeMin, amountLit);
+            float lifetimeMax = Mathf.Lerp(0f, normalLifetimeMax, amountLit);
+            float speedMin = Mathf.Lerp(0f, normalSpeedMin, amountLit);
+            float speedMax = Mathf.Lerp(0f, normalSpeedMax, amountLit);
+
+            fireSystem.startLifetime = Random.Range(lifetimeMin, lifetimeMax);
+            fireSystem.startSpeed = Random.Range(speedMin, speedMax);
+            fireSystem.emissionRate = normalEmissionRate;
+        } else if (poked) {
             pokeTimer += Time.deltaTime;
             if (pokeTimer >= kPokeTimerMax) {
                 poked = false;
@@ -67,6 +81,7 @@ public class LogPart : YuleMonoBehaviour {
         fireSystem = spawner.SpawnFireSystem(this);
         InitializeFireSystem();
         lit = true;
+        lightTimer = 0f;
 
         StartCoroutine(LightNeighbors());
     }

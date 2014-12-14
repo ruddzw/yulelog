@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class YuleMonoBehaviour : MonoBehaviour {
+    protected GameObject GetMatch() {
+        return GameObject.FindWithTag("Match");
+    }
+
     protected GameObject[] GetLogParts() {
         return GameObject.FindGameObjectsWithTag("LogPart");
     }
