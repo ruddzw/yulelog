@@ -20,7 +20,15 @@ public class Initialization : YuleMonoBehaviour {
 
         GetComponent<AudioPlayer>().PlayMatch();
 
-        yield return new WaitForSeconds(1.85f);
+        yield return new WaitForSeconds(0.2f);
+
+        match.Spark();
+
+        yield return new WaitForSeconds(1.45f);
+
+        match.Spark();
+
+        yield return new WaitForSeconds(0.05f);
 
         match.LightMatch();
 

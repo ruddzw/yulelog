@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Match : YuleMonoBehaviour {
     public ParticleSystem fireSystem;
+    public ParticleSystem sparkSystem;
 
     public float unlitSize;
     public float normalSize;
@@ -18,6 +19,13 @@ public class Match : YuleMonoBehaviour {
 
     public void StartLightingAnimation() {
         GetComponent<Animator>().SetTrigger("Start");
+    }
+
+    public void Spark() {
+        sparkSystem.Stop();
+        sparkSystem.Clear();
+        sparkSystem.Simulate(0.005f, true); // Workaround for weird behavior from http://forum.unity3d.com/threads/moving-a-particlesystem-why-does-unity-interpolate-its-position.134283/
+        sparkSystem.Play();
     }
 
     public void LightMatch() {
