@@ -12,13 +12,19 @@ public class Initialization : YuleMonoBehaviour {
     private IEnumerator LightLog() {
         yield return new WaitForSeconds(1f);
 
-        GetMatch().GetComponent<Animator>().SetTrigger("Start");
+        GameObject matchObj = GetMatch();
+        Match match = matchObj.GetComponent<Match>();
+        match.StartLightingAnimation();
 
         yield return new WaitForSeconds(0.5f);
 
         GetComponent<AudioPlayer>().PlayMatch();
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1.85f);
+
+        match.LightMatch();
+
+        yield return new WaitForSeconds(2.15f);
 
         GetComponent<AudioPlayer>().PlayFireplaces();
 
