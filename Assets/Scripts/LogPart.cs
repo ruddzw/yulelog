@@ -19,6 +19,7 @@ public class LogPart : MonoBehaviour {
 
     private ParticleSystem fireSystem;
 
+    private bool lit;
     private float pokeTimer;
     private bool poked;
     private const float kPokeTimerMax = 0.25f;
@@ -27,13 +28,11 @@ public class LogPart : MonoBehaviour {
         return new Vector3(transform.position.x, -3.5f, 1f);
     }
 
-    void Start() {
-        Spawner spawner = GameObject.FindWithTag("GameController").GetComponent<Spawner>();
-        fireSystem = spawner.SpawnFireSystem(this);
-        InitializeFireSystem();
-    }
-
     void Update() {
+        if (!lit) {
+            return;
+        }
+
         if (poked) {
             pokeTimer += Time.deltaTime;
             if (pokeTimer >= kPokeTimerMax) {
@@ -58,7 +57,18 @@ public class LogPart : MonoBehaviour {
         fireSystem.Play();
     }
 
+    public void Light() {
+        Spawner spawner = GameObject.FindWithTag("GameController").GetComponent<Spawner>();
+        fireSystem = spawner.SpawnFireSystem(this);
+        InitializeFireSystem();
+        lit = true;
+    }
+
     public void Poke() {
+        if (!lit) {
+            return;
+        }
+
         pokeTimer = 0f;
         poked = true;
 
@@ -71,6 +81,10 @@ public class LogPart : MonoBehaviour {
     }
 
     public void NearbyPoke() {
+        if (!lit) {
+            return;
+        }
+
         pokeTimer = kPokeTimerMax / 2f;
         poked = true;
     }

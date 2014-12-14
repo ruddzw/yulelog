@@ -4,14 +4,18 @@ using System.Collections;
 public class AudioPlayer : MonoBehaviour {
     public AudioSource fireplace1;
     public AudioSource fireplace2;
+    public AudioSource match;
 
-    private const float kFireplacePlayTime = 23f;
-
-    void Start() {
-        StartCoroutine(PlayFireplaces());
+    public void PlayMatch() {
+        match.Play();
     }
 
-    private IEnumerator PlayFireplaces() {
+    public void PlayFireplaces() {
+        StartCoroutine(DoPlayFireplaces());
+    }
+
+    private const float kFireplacePlayTime = 23f;
+    private IEnumerator DoPlayFireplaces() {
         fireplace2.volume = 0f;
         fireplace2.Stop();
         fireplace1.volume = 1f;
