@@ -25,7 +25,7 @@ public class LogPart : MonoBehaviour {
     private const float kPokeTimerMax = 0.25f;
 
     public Vector3 FirePosition() {
-        return new Vector3(transform.position.x, -3.5f, 1f);
+        return new Vector3(transform.position.x, -3.5f, -1f);
     }
 
     void Update() {

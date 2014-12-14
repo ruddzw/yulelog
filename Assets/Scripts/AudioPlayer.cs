@@ -18,8 +18,9 @@ public class AudioPlayer : MonoBehaviour {
     private IEnumerator DoPlayFireplaces() {
         fireplace2.volume = 0f;
         fireplace2.Stop();
-        fireplace1.volume = 1f;
+        fireplace1.volume = 0f;
         fireplace1.Play();
+        LeanTween.value(gameObject, (float vol) => {fireplace1.volume = vol;}, 0f, 1f, 1f);
 
         while (true) {
             yield return new WaitForSeconds(kFireplacePlayTime);
