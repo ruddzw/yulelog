@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class AudioPlayer : MonoBehaviour {
+public class AudioPlayer : YuleMonoBehaviour {
     public AudioSource fireplace1;
     public AudioSource fireplace2;
     public AudioSource match;

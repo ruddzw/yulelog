@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 4
   left: {fileID: 1003335317}
   right: {fileID: 517484366}
   normalLifetimeMin: 1.10000002
@@ -177,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 11
   left: {fileID: 1416507062}
   right: {fileID: 1425835762}
   normalLifetimeMin: 1.70000005
@@ -240,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 18
   left: {fileID: 992389410}
   right: {fileID: 0}
   normalLifetimeMin: .5
@@ -303,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 8
   left: {fileID: 1845896092}
   right: {fileID: 1520257836}
   normalLifetimeMin: 1.10000002
@@ -354,6 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 1
   left: {fileID: 0}
   right: {fileID: 1196547159}
   normalLifetimeMin: .5
@@ -515,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 5
   left: {fileID: 39023574}
   right: {fileID: 799146346}
   normalLifetimeMin: 1.10000002
@@ -664,6 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 14
   left: {fileID: 1580026467}
   right: {fileID: 1187434281}
   normalLifetimeMin: 1.29999995
@@ -727,6 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 6
   left: {fileID: 517484366}
   right: {fileID: 1845896092}
   normalLifetimeMin: 1.5
@@ -790,6 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 17
   left: {fileID: 1063836068}
   right: {fileID: 258773609}
   normalLifetimeMin: .899999976
@@ -853,6 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 3
   left: {fileID: 1196547159}
   right: {fileID: 39023574}
   normalLifetimeMin: .899999976
@@ -999,6 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 16
   left: {fileID: 1187434281}
   right: {fileID: 992389410}
   normalLifetimeMin: 1.10000002
@@ -1062,6 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 15
   left: {fileID: 710018738}
   right: {fileID: 1063836068}
   normalLifetimeMin: 1.10000002
@@ -1113,6 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 2
   left: {fileID: 345888818}
   right: {fileID: 1003335317}
   normalLifetimeMin: .699999988
@@ -1188,6 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 10
   left: {fileID: 1520257836}
   right: {fileID: 95764347}
   normalLifetimeMin: 2.0999999
@@ -1251,6 +1265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 12
   left: {fileID: 95764347}
   right: {fileID: 1580026467}
   normalLifetimeMin: 1.89999998
@@ -1314,6 +1329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 9
   left: {fileID: 320034918}
   right: {fileID: 1416507062}
   normalLifetimeMin: 1.89999998
@@ -1377,6 +1393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 13
   left: {fileID: 1425835762}
   right: {fileID: 710018738}
   normalLifetimeMin: 1.5
@@ -1508,6 +1525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4c0e396ae244517b2d320c42ae92de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 7
   left: {fileID: 799146346}
   right: {fileID: 320034918}
   normalLifetimeMin: 1.5

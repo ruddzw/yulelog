@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class Initialization : MonoBehaviour {
+public class Initialization : YuleMonoBehaviour {
     void Start() {
         Application.targetFrameRate = 60;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
         StartCoroutine(LightLog());
     }
@@ -15,8 +16,7 @@ public class Initialization : MonoBehaviour {
 
         GetComponent<AudioPlayer>().PlayFireplaces();
 
-        foreach (GameObject logPart in GameObject.FindGameObjectsWithTag("LogPart")) {
-            logPart.GetComponent<LogPart>().Light();
-        }
+        GameObject centerLogPart = GetLogPart(9);
+        centerLogPart.GetComponent<LogPart>().Light();
     }
 }

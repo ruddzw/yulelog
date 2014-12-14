@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TouchReceiver : MonoBehaviour {
+public class TouchReceiver : YuleMonoBehaviour {
     void Update() {
         if (Input.touchCount > 0) {
             foreach (Touch touch in Input.touches) {
@@ -64,8 +64,4 @@ public class TouchReceiver : MonoBehaviour {
     }
 
     private void InputUpAtPoint(Vector2 point2d) {}
-
-    private GameObject[] GetLogParts() {
-        return GameObject.FindGameObjectsWithTag("LogPart");
-    }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Spawner : MonoBehaviour {
+public class Spawner : YuleMonoBehaviour {
     public Transform fireParticleSystemPrefab;
 
     public ParticleSystem SpawnFireSystem(LogPart logPart) {

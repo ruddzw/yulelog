@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LogPart : MonoBehaviour {
+public class LogPart : YuleMonoBehaviour {
+    public int number;
 	public LogPart left;
     public LogPart right;
 
@@ -25,7 +26,7 @@ public class LogPart : MonoBehaviour {
     private const float kPokeTimerMax = 0.25f;
 
     public Vector3 FirePosition() {
-        return new Vector3(transform.position.x, -3.5f, -1f);
+        return new Vector3(transform.position.x, -3.5f, 1f);
     }
 
     void Update() {
@@ -58,10 +59,26 @@ public class LogPart : MonoBehaviour {
     }
 
     public void Light() {
+        if (lit) {
+            return;
+        }
+
         Spawner spawner = GameObject.FindWithTag("GameController").GetComponent<Spawner>();
         fireSystem = spawner.SpawnFireSystem(this);
         InitializeFireSystem();
         lit = true;
+
+        StartCoroutine(LightNeighbors());
+    }
+    private IEnumerator LightNeighbors() {
+        yield return new WaitForSeconds(0.25f);
+
+        if (left != null && !left.lit) {
+            left.Light();
+        }
+        if (right != null && !right.lit) {
+            right.Light();
+        }
     }
 
     public void Poke() {
