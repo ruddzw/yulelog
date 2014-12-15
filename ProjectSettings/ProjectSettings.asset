@@ -121,19 +121,19 @@ PlayerSettings:
       m_Size: 128
   - m_BuildTarget: Standalone
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 24cfa52091331458bafbde7806f5cc72, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 62d8d8800f1b5479fab4df41e70cbf80, type: 3}
       m_Size: 1024
-    - m_Icon: {fileID: 2800000, guid: e107a7af525f241f8ac994547b8cae36, type: 3}
+    - m_Icon: {fileID: 2800000, guid: fca6e5a0286c141a3a1a628b0890b207, type: 3}
       m_Size: 512
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 1f95b7e72525b4f7bb69c5b40897501e, type: 3}
       m_Size: 256
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 665405843d5f64b22be84c5ccf900e4a, type: 3}
       m_Size: 128
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 45d3a9207e29a492f97ef0860114e1a6, type: 3}
       m_Size: 48
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 9af7dbb8d7d354ab094f5da1216eea9b, type: 3}
       m_Size: 32
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 10ba3f2d66aee4aba8ef6a2fa13a837b, type: 3}
       m_Size: 16
   - m_BuildTarget: iPhone
     m_Icons:
