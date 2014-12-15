@@ -1,4 +1,10 @@
-Brown Log:
+# Pixel Fireplace
+
+## Colors
+
+(In HSB)
+
+Browns for Log:
 25 50 40
 25 50 50
 25 50 60
@@ -9,8 +15,10 @@ Background:
 
 Fire:
 5 100 90 (red)
----25 100 90 (orange)
 60 100 90 (yellow)
+
+
+## Sounds
 
 Fire Sound from http://www.pdsounds.org/sounds/dry_grass_burning_in_open_fireplace
 Match Sound from https://www.freesound.org/people/JarredGibb/sounds/248241/
