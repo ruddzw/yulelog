@@ -5,6 +5,9 @@ public class AudioPlayer : YuleMonoBehaviour {
     public AudioSource fireplace1;
     public AudioSource fireplace2;
     public AudioSource match;
+    public AudioSource poke1;
+    public AudioSource poke2;
+    public AudioSource poke3;
 
     public void PlayMatch() {
         match.Play();
@@ -44,6 +47,24 @@ public class AudioPlayer : YuleMonoBehaviour {
             yield return new WaitForSeconds(1f);
 
             fireplace2.Stop();
+        }
+    }
+
+    public void PlayPoke() {
+        int randomPoke = Random.Range(1, 4);
+        switch (randomPoke) {
+            case 1:
+                poke1.Play();
+                break;
+            case 2:
+                poke2.Play();
+                break;
+            case 3:
+                poke3.Play();
+                break;
+            default:
+                Debug.LogError("There are no other pokes! " + randomPoke);
+                break;
         }
     }
 }

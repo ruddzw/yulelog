@@ -6,6 +6,10 @@ public class YuleMonoBehaviour : MonoBehaviour {
         return GameObject.FindWithTag("Match");
     }
 
+    protected GameObject GetLog() {
+        return GameObject.FindWithTag("Log");
+    }
+
     protected GameObject[] GetLogParts() {
         return GameObject.FindGameObjectsWithTag("LogPart");
     }

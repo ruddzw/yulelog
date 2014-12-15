@@ -21,6 +21,7 @@ public class LogPart : YuleMonoBehaviour {
     private ParticleSystem fireSystem;
 
     private bool lit;
+    private bool fullyLit;
     private float lightTimer;
     private const float kLightTimerMax = 2f;
     private float pokeTimer;
@@ -58,6 +59,7 @@ public class LogPart : YuleMonoBehaviour {
             fireSystem.startSpeed = Random.Range(pokedSpeedMin, pokedSpeedMax);
             fireSystem.emissionRate = pokedEmissionRate;
         } else {
+            fullyLit = true;
             fireSystem.startLifetime = Random.Range(normalLifetimeMin, normalLifetimeMax);
             fireSystem.startSpeed = Random.Range(normalSpeedMin, normalSpeedMax);
             fireSystem.emissionRate = normalEmissionRate;
@@ -96,13 +98,22 @@ public class LogPart : YuleMonoBehaviour {
         }
     }
 
+    public bool CanBePoked() {
+        return fullyLit && !poked;
+    }
+
     public void Poke() {
-        if (!lit) {
+        if (!CanBePoked()) {
             return;
         }
 
         pokeTimer = 0f;
         poked = true;
+
+        StartCoroutine(DoNearbyPokes());
+    }
+    private IEnumerator DoNearbyPokes() {
+        yield return new WaitForSeconds(0.05f);
 
         if (left != null) {
             left.NearbyPoke();
@@ -113,11 +124,53 @@ public class LogPart : YuleMonoBehaviour {
     }
 
     public void NearbyPoke() {
-        if (!lit) {
+        if (!CanBePoked()) {
             return;
         }
 
         pokeTimer = kPokeTimerMax / 2f;
+        poked = true;
+
+        StartCoroutine(DoKindaNearbyPokes());
+    }
+    private IEnumerator DoKindaNearbyPokes() {
+        yield return new WaitForSeconds(0.05f);
+
+        if (left != null) {
+            left.KindaNearbyPoke();
+        }
+        if (right != null) {
+            right.KindaNearbyPoke();
+        }
+    }
+
+    public void KindaNearbyPoke() {
+        if (!CanBePoked()) {
+            return;
+        }
+
+        pokeTimer = kPokeTimerMax / 4f;
+        poked = true;
+
+        StartCoroutine(DoFarawayPokes());
+    }
+    private IEnumerator DoFarawayPokes() {
+        yield return new WaitForSeconds(0.05f);
+
+        if (left != null) {
+            left.FarawayPoke();
+        }
+        if (right != null) {
+            right.FarawayPoke();
+        }
+    }
+
+    public void FarawayPoke() {
+        if (!CanBePoked()) {
+            return;
+        }
+
+        pokeTimer = kPokeTimerMax / 8f;
         poked = true;
     }
 }
