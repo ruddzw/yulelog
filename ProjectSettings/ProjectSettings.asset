@@ -67,7 +67,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.Heartonomy.PixelFireplace
+  iPhoneBundleIdentifier: com.heartonomy.yulepixels
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: 2577cbb7e4de045b5b0fc73ec3f40dad

@@ -42,10 +42,11 @@ public class TouchReceiver : YuleMonoBehaviour {
         }
 
         if (tappedLogPart != null) {
+            Log log = GetLog().GetComponent<Log>();
             LogPart logPart = tappedLogPart.GetComponent<LogPart>();
-            if (logPart.CanBePoked()) {
+            if (log.CanBePoked() && logPart.CanBePoked()) {
                 GetComponent<AudioPlayer>().PlayPoke();
-                SparkAtPoint(point2d, tappedLogPart);
+                log.SparkAtPoint(point2d, tappedLogPart);
                 tappedLogPart.GetComponent<LogPart>().Poke();
             }
         }
@@ -54,8 +55,4 @@ public class TouchReceiver : YuleMonoBehaviour {
     private void InputStayAtPoint(Vector2 point2d) {}
 
     private void InputUpAtPoint(Vector2 point2d) {}
-
-    public void SparkAtPoint(Vector2 point2d, GameObject logPart) {
-        GetLog().GetComponent<Log>().SparkAtPoint(point2d, logPart);
-    }
 }
