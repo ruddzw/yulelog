@@ -5251,6 +5251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sparkSystem: {fileID: 1087072555}
+  pokeOffset: {x: 0, y: .200000003, z: 0}
 --- !u!1 &2042208432
 GameObject:
   m_ObjectHideFlags: 0
